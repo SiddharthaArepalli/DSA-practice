@@ -1,3 +1,5 @@
+// import Trees.Node;
+
 class Node{
     int data;
     Node next;
@@ -28,6 +30,25 @@ class LL1{
      }
             return count;
          }
+
+         private static int check(Node head, int value){
+            Node temp = head;
+           
+              
+            while(temp!=null)
+            {
+               // System.out.println(temp.data);
+               if(temp.data == value)
+            {
+                return 1;
+            }
+                temp = temp.next;
+            }
+            return 0;
+
+        
+        
+         }
    private static  Node ArraytoLL(int arr[]){
         Node head = new Node(arr[0]);
         Node mover = head;
@@ -48,6 +69,8 @@ public static void main(String[] args) {
         temp = temp.next;
      }
      System.out.println("Length of Linked List is : "+llLength(head));
+    int s = check(head, 4);
+    System.out.println(s);
     }
 }
 
