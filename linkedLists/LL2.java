@@ -52,6 +52,35 @@ public class LL2 {
     return head;
         
     }
+    private static Node delK(Node head, int k){
+        if(head == null){
+            return head;
+        }
+        if(k == 1){
+            head = head.next;
+            return head;
+        }
+        int count = 0;
+        Node temp = head;
+        Node prev = null;
+        while(temp != null){
+            count++;
+            if(count == k){
+                if(prev == null){
+                    head = temp.next; // If the node to be deleted is the first node
+                } else {
+                    prev.next = temp.next; // Link the previous node to the next of the current node
+                }
+                return head;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+    
+    
+
    
     public static void main(String[] args) {
         int arr[] = { 23,34,45,56,78};
@@ -59,14 +88,13 @@ public class LL2 {
         Node head = ArraytoLL(arr);
 
         Node temp = head;
-       
-        head = delTail(head);
+       head = delK(head,4);
+        // head = delTail(head);
         while(temp!=null){
            System.out.println(temp.data);
            temp = temp.next;
-           
         }
-    // head= delNode(head);
+   
       
       
 
