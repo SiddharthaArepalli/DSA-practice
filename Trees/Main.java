@@ -1,4 +1,7 @@
- class Node {
+package Trees;
+// import Node;
+
+class Node {
   int data;
   Node left;
   Node right;

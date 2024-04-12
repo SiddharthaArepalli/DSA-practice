@@ -14,7 +14,7 @@ class Node{
     Node(int x){
         this.data = x;
     }
-
+  
 }
 
 
@@ -51,13 +51,34 @@ private static Node InsertED(int val, Node head){
   temp.next = insrt;
   return head;
 }
+// insertion at any point
 
-// insert at position :
-  private static Node InsertPOS(int val , Node head){
-
-
+   private static Node InsertATp(int val, Node head,int k){
+      if(head==null){
+        if(k ==1){
+        return new Node(val);
+      }
+      else return head;
+      }
+      if(k==1){
+        Node ns = new Node(val,head);
+        head.next = ns;
+        return head;
+      }
+      int count = 0;
+      Node temp = head;
+      while(temp!=null){
+         count++;
+         if(count == (k-1)){
+          Node nn = new Node(val, head);
+          nn.next = temp.next;
+          temp.next =nn;
+          return head;
+         }
+      }
     return head;
-  }
+   }
+
 
 
    public static void main(String[] args) {
@@ -67,29 +88,36 @@ private static Node InsertED(int val, Node head){
     Node tem =InsertST(0,head);
     
     Node ins =InsertED(100,head);
-
-    while(ins!= null){
-      System.out.println(ins.data);
-         ins = ins.next;
-        
+    
+    Node at = InsertATp(67, head,3);
+    while(at!= null){
+      System.out.println(at.data);
+         at = at.next;
      }
+    
+
+    // while(ins!= null){
+    //   System.out.println(ins.data);
+    //      ins = ins.next;
+        
+    //  }
 
      System.out.println("---------------******---------------");
 
-    while(tem!= null){
-        System.out.println(tem.data);
-           tem = tem.next;
+    // while(tem!= null){
+    //     System.out.println(tem.data);
+    //        tem = tem.next;
           
-       }
-    Node temp = head;
+    //    }
+    // Node temp = head;
 
     System.out.println("---------------******---------------");
 
-   while(temp!= null){
-    System.out.println(temp.data);
-       temp = temp.next;
+  //  while(temp!= null){
+  //   System.out.println(temp.data);
+  //      temp = temp.next;
       
-   }
+  //  }
    System.out.println("---------------******---------------");
    }
 }
