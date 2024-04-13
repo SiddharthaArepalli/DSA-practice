@@ -69,19 +69,19 @@ private static Node InsertED(int val, Node head){
       Node temp = head;
       while(temp!=null){
          count++;
-         if(count == (k-1)){
+         if(count == k-1){
           Node nn = new Node(val, head);
           nn.next = temp.next;
           temp.next =nn;
           return head;
-         }
+          }
+          temp = temp.next;
       }
-    return head;
+      return head;
    }
 
 
-
-   public static void main(String[] args) {
+   public static void main(String[] args){
     int arr[] = {1,2,3,4,5};
     Node head = ArrayToLL(arr);
     // head = new Node(0, head);
@@ -89,35 +89,35 @@ private static Node InsertED(int val, Node head){
     
     Node ins =InsertED(100,head);
     
-    Node at = InsertATp(67, head,3);
+    Node at = InsertATp(67, head, 6);
     while(at!= null){
       System.out.println(at.data);
          at = at.next;
      }
-    
 
-    // while(ins!= null){
-    //   System.out.println(ins.data);
-    //      ins = ins.next;
+    while(ins!= null){
+      System.out.println(ins.data);
+         ins = ins.next;
         
-    //  }
+     }
 
      System.out.println("---------------******---------------");
 
-    // while(tem!= null){
-    //     System.out.println(tem.data);
-    //        tem = tem.next;
+    while(tem!= null){
+        System.out.println(tem.data);
+           tem = tem.next;
           
-    //    }
-    // Node temp = head;
+       }
+    Node temp = head;
 
     System.out.println("---------------******---------------");
 
-  //  while(temp!= null){
-  //   System.out.println(temp.data);
-  //      temp = temp.next;
+   while(temp!= null){
+    System.out.println(temp.data);
+       temp = temp.next;
       
-  //  }
+   }
    System.out.println("---------------******---------------");
    }
+
 }
