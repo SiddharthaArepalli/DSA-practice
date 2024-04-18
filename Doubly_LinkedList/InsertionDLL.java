@@ -31,8 +31,6 @@ public class InsertionDLL {
         }
         return head;
     }
-     
-
     private static Node ArrayToDll(int arr[]){
         Node head = new Node(arr[0]);
         Node back = head;
@@ -60,9 +58,8 @@ public class InsertionDLL {
           Node newNode = new Node(val, null, temp);
           temp.next = newNode;
         
-          return head; 
-          
-
+        return head; 
+    
     }
       
     private static Node InsertTailBefore(Node head , int val){
@@ -78,23 +75,47 @@ public class InsertionDLL {
         temp.prev=nN;
         
         return head;  
-        
+
   }
 
 
-     
+  private static Node InsertBeforeK(Node head , int val, int k){
+    int cnt =0;
+    Node temp = head;
+    while (temp.next != null) {
+        cnt++;
+        // if(k == 1){
+        //     InsertHead(head,100);
+        // }
+        // if(k == 6){
+        //     InsertTailBefore(head , 34);
+        // }
+        if(cnt == k){
+            break;
+        }
+      temp = temp.next;
+    }
+  Node back = temp.prev;
+    // Create new node and link it
+    Node nN = new Node(val, temp, back);
+    back.next=nN;
+    temp.prev=nN;
+    
+    return head;  
+
+}
+  
 
 
     public static void main(String[] args) {
+        
         int arr[] = {1,2,3,4,5,6};
         Node head = ArrayToDll(arr);
-        head = InsertHead(head,100);
+        // head = InsertHead(head,100);
         // head = InsertTail(head , 234);
-        head =InsertTailBefore(head , 34);
-        head = InsertTail(head , 234);
+        // head =InsertTailBefore(head , 34);
+        // head = InsertTail(head , 234);
+        head = InsertBeforeK(head ,56,  6);
         print(head);
     }
-
-
-
 }
