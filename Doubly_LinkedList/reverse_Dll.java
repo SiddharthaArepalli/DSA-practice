@@ -55,13 +55,25 @@ public class reverse_Dll{
         }
         return head;
     }
+
+
+    private static Node Middle(Node head){
+        Node slow = head;
+        Node fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+  return slow;
+    }
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6};
         Node head = ArrayToDll(arr);
-        print(head);
+        // print(head);
         System.out.println("After the inversion");
-        head = reverseDll(head);
-        print(head);
+        // head = reverseDll(head);
+        Node slow = Middle(head);
+        // print(head);
     }
 }
 
