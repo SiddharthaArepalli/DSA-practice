@@ -17,6 +17,7 @@ class Node {
         this.prev = null;
         this.next = null;
     }
+
 }
 
 
@@ -45,6 +46,8 @@ public class DL1 {
            back = temp;
         }
         return head;
+
+        
     }
     
     //
@@ -61,6 +64,7 @@ public class DL1 {
       head.prev=null;
       ulta.next=null;
       return head;
+
     }
 
     // deleting tail 
@@ -81,6 +85,7 @@ public class DL1 {
         
     //     return head;
     // }
+
     private static Node DeleteK(Node head, int k) {
         if (head == null || k <= 0) // Check for invalid inputs
             return head;
@@ -126,6 +131,5 @@ public class DL1 {
         print(head);
         
     }
-
 
 }
