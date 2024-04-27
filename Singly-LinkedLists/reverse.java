@@ -1,3 +1,4 @@
+import java.util.Stack;
 
 class Node {
     int data;
@@ -30,7 +31,7 @@ public class reverse {
     private static Node ArrayToLL(int arr[]){
         Node head = new Node(arr[0]);
         Node mover = head;
-        for(int i = 1;i<arr.length-1;i++){
+        for(int i = 1;i<arr.length;i++){
                 Node temp = new Node(arr[i]);
                 mover.next = temp;
                 mover = temp;
@@ -51,13 +52,36 @@ public class reverse {
 
      return newHead;
    }
+
+   private static boolean isPalindrome(Node head) {
+        Stack<Integer> st = new Stack<>();
+        Node temp = head;
+        while(temp!=null){
+            
+            st.push(temp.data);
+            temp = temp.next;
+        }
+        
+        temp = head;
+        while(temp!=null){
+            if(temp.data!=st.peek()) return false;
+             st.pop();
+            temp = temp.next;
+           
+        }
+        return true;
+    }
     public static void main(String[] args) {
-        int arr[] = {1,2,3,4,5,6};
+        
+        int arr[] = {1,2,3,3,2,1};
         Node head = ArrayToLL(arr);
          print(head);
         System.out.println("------------------");
         head =  reverseList(head);
         print(head);
+
+    System.out.println(isPalindrome(head));
+   
         }
     }
 
