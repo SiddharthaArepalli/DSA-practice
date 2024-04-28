@@ -79,8 +79,8 @@ public class reverse {
         System.out.println("------------------");
         head =  reverseList(head);
         print(head);
-
-    System.out.println(isPalindrome(head));
+    boolean s =isPalindrome(head);
+    System.out.println(s);
    
         }
     }
