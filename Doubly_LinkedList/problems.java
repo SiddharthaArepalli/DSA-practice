@@ -75,7 +75,25 @@ public class problems {
            temp = temp.next;
         }
         return head;
+    }  
+    private static int  LoopLength(Node head) {
+        Node temp = head;
+        int count = 0;
+        HashMap<Node, Integer> map = new HashMap<>();
+        while(temp!=null){
+            if(map.containsKey(temp)){
+                int value = map.get(temp);
+                return count - value ;
+            }
+            map.put(temp,count);
+            count = count+1;
+            temp = temp.next;
+        }
+        return 0;
     }
+   
+     
+
     public static void main(String[] args) {
         // Create a sample linked list
         // with a loop for testing
@@ -84,13 +102,16 @@ public class problems {
         Node third = new Node(3);
         Node fourth = new Node(4);
         Node fifth = new Node(5);
+        Node sixth = new Node(6);
 
         head.next = second;
         second.next = third;
         third.next = fourth;
         fourth.next = fifth;
+        fifth.next = sixth;
+
         // Create a loop
-        fifth.next = second;
+        sixth.next = third;
 
         // Check if there is a loop
         // in the linked list
@@ -101,7 +122,10 @@ public class problems {
         }
 
         Node x = detectCycle(head);
-        System.out.println(x.data);
+        System.out.println(x.data); 
+
+        int loopLength = LoopLength(head);
+        System.out.println("length of the loop is "+loopLength);
         // No need to explicitly free memory
         // in Java; the garbage collector handles it
     }
