@@ -76,6 +76,9 @@ public class problems {
         }
         return head;
     }  
+
+
+    
     private static int  LoopLength(Node head) {
         Node temp = head;
         int count = 0;
@@ -128,6 +131,7 @@ public class problems {
         System.out.println("length of the loop is "+loopLength);
         // No need to explicitly free memory
         // in Java; the garbage collector handles it
+        
     }
 }
 
