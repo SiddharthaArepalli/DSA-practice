@@ -45,6 +45,7 @@ if (fast== null)
     }
 
 
+    
     // Function to delete the Nth node 
     //from the end of the linked list
     public static Node DeleteNthNodefromEnd(Node head, int N) {
