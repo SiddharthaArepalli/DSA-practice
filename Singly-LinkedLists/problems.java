@@ -24,6 +24,26 @@ public class problems {
             head = head.next;
         }
     }
+    public static Node removeNthFromEnd(Node head, int n) {
+    Node fast = head;
+    for(int i = 0;i<n;i++)
+    {
+       fast = fast.next;
+    }
+if (fast== null)
+           return head.next;
+
+      Node slow = head;
+       while(fast.next!=null)
+       {
+           fast = fast.next;
+           slow = slow.next;
+       }
+       
+       slow.next =slow.next.next;
+       return head;
+    }
+
 
     // Function to delete the Nth node 
     //from the end of the linked list
@@ -78,7 +98,8 @@ public class problems {
 
         // Delete the Nth node from 
         // the end and print the modified linked list
-        head = DeleteNthNodefromEnd(head, N);
+        // head = DeleteNthNodefromEnd(head, N);
+       head=  removeNthFromEnd(head, 3);
         printLL(head);
     }
 }
