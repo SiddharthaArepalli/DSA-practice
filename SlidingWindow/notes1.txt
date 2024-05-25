@@ -1,0 +1,63 @@
+Introduction
+
+The video is about 2 pointers and sliding window concepts in algorithms
+The concepts will be explained through examples and templates
+Pattern 1: Constant Window
+
+The problem involves finding the maximum sum of a constant window size
+
+>>> The template involves:
+
+Initialize two pointers, L and R, to the start of the array
+Calculate the sum of the window
+If the sum is valid, update the maximum length
+Move the window to the right by incrementing R
+If the sum is not valid, move the window to the right by incrementing L
+Time complexity: O(n)
+Space complexity: O(1)
+
+>> Pattern 2: Longest Subarray
+
+The problem involves finding the longest subarray with a sum less than or equal to K
+The template involves:
+Initialize two pointers, L and R, to the start of the array
+Calculate the sum of the window
+If the sum is valid, update the maximum length
+Move the window to the right by incrementing R
+If the sum is not valid, move the window to the right by incrementing L and subtracting the leftmost element
+Time complexity: O(n)
+Space complexity: O(1)
+
+>> Optimization
+
+In some cases, the shrinking process can be optimized by not shrinking the window all the way back to the start
+Instead, shrink the window by one element at a time and check if the sum is valid
+Pattern 3: Number of Subarrays
+
+The problem involves finding the number of subarrays with a sum equal to K
+The template involves:
+Solve two problems: find the number of subarrays with sum less than or equal to K, and find the number of subarrays with sum less than or equal to K-1
+Subtract the two results to get the final answer
+This pattern is solved using the Pattern 2 template
+
+ >> Pattern 4: Minimum Window
+
+The problem involves finding the minimum window with a sum greater than or equal to K
+The template involves:
+Initialize two pointers, L and R, to the start of the array
+Calculate the sum of the window
+If the sum is valid, try to shrink the window by incrementing L
+If the sum is not valid, move the window to the right by incrementing R
+Time complexity: O(n)
+Space complexity: O(1)
+Conclusion
+
+The video provides an overview of the 2 pointers and sliding window concepts
+The templates provided can be used to solve a variety of problems
+Practice is key to mastering these concepts.
+
+
+
+Answer 2
+3
+Verify
