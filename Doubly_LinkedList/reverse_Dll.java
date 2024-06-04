@@ -66,6 +66,9 @@ public class reverse_Dll{
         }
   return slow;
     }
+
+
+    
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,6};
         Node head = ArrayToDll(arr);
@@ -74,8 +77,6 @@ public class reverse_Dll{
         // head = reverseDll(head);
         Node slow = Middle(head);
         // print(head);
-
-        
     }
 }
 
